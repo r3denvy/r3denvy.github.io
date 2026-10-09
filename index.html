@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
 <style>
   :root{
     color-scheme:dark;
@@ -177,6 +178,18 @@
 
   /* contact and footer */
   .contact{padding-bottom:clamp(64px,8vw,96px)}
+  .social{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border:1.5px solid transparent;border-radius:999px;font-size:16px;font-weight:620;text-decoration:none;transition:filter .2s ease,transform .2s ease}
+  .social i{font-size:18px;line-height:1}
+  .social:hover{filter:brightness(1.12);transform:translateY(-1px)}
+  .social-linkedin{background:#0A66C2;color:#FFFFFF}
+  .social-github{background:#F0F6FC;color:#181717}
+  .social-facebook{background:#166FE5;color:#FFFFFF}
+  .social-instagram{background:linear-gradient(45deg,#E1306C,#C13584 40%,#833AB4 75%,#5851DB);color:#FFFFFF}
+  .social-whatsapp{background:#25D366;color:#06160F}
+  .social-steam{background:linear-gradient(135deg,#2A475E,#171A21);color:#FFFFFF;border-color:rgba(102,192,244,.45)}
+  .social-cv{border-color:var(--text);color:var(--text)}
+  .social-cv:hover{background:var(--text);color:var(--on-light);filter:none}
+  @media (prefers-reduced-motion:reduce){.social:hover{transform:none}}
   .email{display:inline-block;margin-top:28px;font-stretch:118%;font-weight:760;font-size:clamp(24px,4.6vw,58px);line-height:1.1;letter-spacing:-.015em;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;text-decoration-color:var(--leaf);overflow-wrap:anywhere}
   .email:hover{color:var(--leaf-hi)}
   .contact-links{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
@@ -215,12 +228,12 @@
     <div class="hero-inner">
       <div class="hero-text">
         <h1>Sadman Alam Reshad</h1>
-        <p class="lede">Flutter developer and technical lead. I build cross-platform apps and the native code beneath them, most recently secure communication and tracking systems for the Bangladesh Army.</p>
+        <p class="lede">Flutter Developer and Technical Lead. I build cross-platform apps and the native code beneath them, most recently secure communication, tracking and healthcare systems for the Bangladesh Army.</p>
         <div class="actions">
           <a class="btn btn-primary" href="mailto:sadmanalamalam@gmail.com">Email me</a>
           <a class="btn btn-ghost" href="resume.pdf">Download CV</a>
         </div>
-        <p class="status"><span class="status-dot" aria-hidden="true"></span>Currently Technical Lead at the Bangladesh Army IT Directorate, Dhaka</p>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Currently Technical Lead at the Bangladesh Army IT Directorate, Dhaka Cantonment, Bangladesh.</p>
       </div>
 
       <figure class="stack" aria-label="The layers I work across, from the Flutter UI down to the operating system">
@@ -546,9 +559,13 @@
       <p class="intro">Email is the fastest way to reach me.</p>
       <a class="email" href="mailto:sadmanalamalam@gmail.com">sadmanalamalam@gmail.com</a>
       <ul class="contact-links">
-        <li><a class="btn btn-ghost" href="https://www.linkedin.com/in/sadman-alam-impulse/">LinkedIn</a></li>
-        <li><a class="btn btn-ghost" href="https://github.com/sadman1148">GitHub</a></li>
-        <li><a class="btn btn-ghost" href="resume.pdf">Download CV</a></li>
+        <li><a class="social social-linkedin" href="https://www.linkedin.com/in/sadman-alam-impulse/"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a></li>
+        <li><a class="social social-github" href="https://github.com/sadman1148"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a></li>
+        <li><a class="social social-whatsapp" href="https://wa.me/qr/CJMBBWVFSHQ7A1"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a></li>
+        <li><a class="social social-steam" href="https://steamcommunity.com/id/R3DENVY/"><i class="fa-brands fa-steam" aria-hidden="true"></i>Steam</a></li>
+        <li><a class="social social-facebook" href="https://www.facebook.com/sadman.alam.KacchiBiryaniBoy/"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a></li>
+        <li><a class="social social-instagram" href="https://www.instagram.com/sadman11432/"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+        <li><a class="social social-cv" href="resume.pdf"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>Download CV</a></li>
       </ul>
     </div>
   </section>
