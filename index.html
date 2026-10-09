@@ -1,662 +1,645 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en-GB">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.1">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sadman Alam Reshad | Flutter Developer and Technical Lead</title>
+<meta name="description" content="Flutter developer and technical lead with 5+ years of experience building cross-platform apps and the native Android and iOS code beneath them.">
+<meta name="theme-color" content="#EEF3EE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sadman Alam Reshad | Flutter Developer and Technical Lead">
+<meta property="og:description" content="Cross-platform apps in Flutter, with native Android and iOS underneath.">
+<meta property="og:url" content="https://r3denvy.github.io/">
+<meta property="og:image" content="https://r3denvy.github.io/sadman.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<style>
+  :root{
+    --paper:#EEF3EE;
+    --ink:#0E3528;
+    --moss:#4D6B5F;
+    --line:#C8D6CD;
+    --mist:#E0EBE3;
+    --sage:#CADDD1;
+    --leaf:#2A7158;
+    --signal:#D7263D;
+    --max:1160px;
+    --gutter:clamp(20px,5vw,56px);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  *{margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  ::selection{background:var(--ink);color:var(--paper)}
+  :focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:6px}
+
+  .skip{position:absolute;left:16px;top:-64px;z-index:100;padding:10px 16px;border-radius:8px;background:var(--ink);color:var(--paper);text-decoration:none}
+  .skip:focus{top:16px}
+
+  /* background dot grid, drifts slower than the page */
+  .bg-dots{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(14,53,40,.14) 1.1px,transparent 1.6px);background-size:26px 26px;background-position:0 var(--bgy,0px)}
+
+  /* navigation */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(238,243,238,.84);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .25s ease}
+  .nav.is-scrolled{border-bottom-color:var(--line)}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{font-stretch:125%;font-weight:800;font-size:16px;text-decoration:none}
+  .nav-links{list-style:none;display:flex;gap:clamp(16px,3vw,32px)}
+  .nav-links a{font-size:15px;font-weight:550;text-decoration:none}
+  .nav-links a:hover{color:var(--leaf)}
+  @media (max-width:480px){.brand{display:none}.nav-inner{justify-content:center}}
+
+  /* hero */
+  .hero{position:relative}
+  .hero-inner{position:relative;max-width:var(--max);margin:0 auto;padding:120px var(--gutter) 56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,5vw,72px);align-items:center}
+  .hero h1{font-stretch:125%;font-weight:820;font-size:clamp(48px,6.6vw,92px);line-height:.92;letter-spacing:-.02em}
+  .lede{margin-top:28px;max-width:36ch;font-size:clamp(18px,1.55vw,21px);line-height:1.5}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border:1.5px solid var(--ink);border-radius:999px;font-size:16px;font-weight:620;text-decoration:none;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{background:var(--leaf);border-color:var(--leaf)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .status{display:flex;align-items:center;gap:12px;margin-top:32px;font-size:15px;color:var(--moss)}
+  .status-dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px rgba(215,38,61,.16)}
+
+  /* exploded layer stack */
+  .stack{position:relative;justify-self:center;width:min(100%,560px,calc((100vh - 170px) / 1.1));aspect-ratio:10/11}
+  .layer{position:absolute;top:0;left:0;width:100%;will-change:transform}
+  .layer svg{width:62%;height:auto;overflow:visible;filter:drop-shadow(0 16px 20px rgba(14,53,40,.16))}
+  .layer-label{position:absolute;left:60%;top:calc(32% - .8em);max-width:40%;padding-left:48px;opacity:0}
+  .layer-label::before{content:"";position:absolute;left:4px;top:.8em;width:36px;height:1.5px;background:var(--moss)}
+  .layer-label strong{display:block;font-stretch:112%;font-weight:700;font-size:16px;line-height:1.3}
+  .layer-label span{display:block;margin-top:2px;font-size:14px;line-height:1.4;color:var(--moss)}
+  .hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-size:14px;color:var(--moss)}
+
+  @media (min-width:900px){
+    .hero{height:240vh}
+    .hero-inner{position:sticky;top:0;height:100vh;min-height:640px}
+  }
+  @media (max-width:899px){
+    .hero-inner{grid-template-columns:minmax(0,1fr);padding-top:112px;gap:56px}
+    .stack{width:min(100%,520px);aspect-ratio:10/9}
+    .layer svg{width:54%}
+    .layer-label{left:52%;max-width:48%;padding-left:30px}
+    .layer-label::before{width:20px}
+    .layer-label span{display:none}
+    .hint{display:none}
+  }
+
+  /* shared section styles */
+  .block{padding:clamp(88px,11vw,144px) 0}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+  .block h2{max-width:20ch;font-stretch:118%;font-weight:760;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.015em}
+  .intro{margin-top:18px;max-width:58ch;font-size:18px;color:var(--moss)}
+  section[id],header[id]{scroll-margin-top:80px}
+  .inline-link{font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:var(--leaf)}
+  .inline-link:hover{color:var(--leaf)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(36px,6vw,88px);align-items:center}
+  .portrait{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:var(--leaf)}
+  .portrait .initials{position:absolute;inset:0;display:grid;place-items:center;font-stretch:125%;font-weight:800;font-size:72px;color:var(--paper)}
+  .portrait img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform}
+  .about-text p{margin-top:20px;max-width:60ch;font-size:18px}
+  .about-text h2 + p{margin-top:28px}
+  @media (max-width:760px){.about-grid{grid-template-columns:minmax(0,1fr)}.portrait{max-width:300px}}
+
+  /* experience */
+  .timeline{list-style:none;display:grid;gap:64px;margin-top:64px}
+  .job{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 40px}
+  .job-when{padding-top:7px;text-align:right;font-style:italic;font-size:15px;color:var(--moss)}
+  .job h3{font-stretch:112%;font-weight:740;font-size:clamp(22px,2.2vw,26px);line-height:1.2}
+  .job-role{margin-top:4px;color:var(--moss)}
+  .job ul{max-width:68ch;margin-top:18px;padding-left:1.15em}
+  .job li + li{margin-top:10px}
+  .job li::marker{color:var(--leaf)}
+  .note{margin-top:16px;font-size:14px;font-style:italic;color:var(--moss)}
+  @media (max-width:760px){.job{grid-template-columns:minmax(0,1fr)}.job-when{padding-top:0;text-align:left}}
+
+  /* restricted systems */
+  .restricted{margin-top:56px;padding:clamp(28px,4.5vw,56px);border-radius:28px;background:var(--ink);color:var(--paper)}
+  .restricted-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px}
+  .restricted h3{font-stretch:118%;font-weight:740;font-size:clamp(22px,2.4vw,28px)}
+  .restricted-head p{font-size:15px;color:#A7C1B4}
+  .systems{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:40px}
+  .system{padding:0 clamp(20px,2.5vw,32px);border-left:1px solid rgba(238,243,238,.16)}
+  .system:first-child{padding-left:0;border-left:0}
+  .system:last-child{padding-right:0}
+  .redacted{display:block;width:70%;height:14px;margin-bottom:18px;border-radius:2px;background:rgba(238,243,238,.86)}
+  .system h4{font-stretch:112%;font-weight:700;font-size:19px;line-height:1.3}
+  .system p{margin-top:10px;font-size:16px;color:#CFDDD5}
+  @media (max-width:860px){.systems{grid-template-columns:minmax(0,1fr);gap:36px}.system{padding:0;border-left:0}}
+
+  /* public apps and repos */
+  .subhead{margin-top:80px;font-stretch:118%;font-weight:740;font-size:clamp(22px,2.4vw,28px)}
+  .apps{list-style:none;margin-top:20px}
+  .app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr) auto;gap:10px 48px;align-items:baseline;padding:28px 0;border-top:1px solid var(--line)}
+  .app:last-child{border-bottom:1px solid var(--line)}
+  .app h4{font-stretch:115%;font-weight:740;font-size:21px;line-height:1.25}
+  .app-tech{margin-top:4px;font-size:14px;color:var(--moss)}
+  .app-desc{max-width:60ch}
+  .app-links{list-style:none;display:flex;gap:20px;white-space:nowrap}
+  @media (max-width:820px){.app{grid-template-columns:minmax(0,1fr)}}
+
+  /* skills as layers */
+  .strata{list-style:none;margin-top:56px;border-radius:28px;overflow:hidden}
+  .stratum{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:8px 40px;align-items:baseline;padding:26px clamp(22px,3.5vw,44px)}
+  .stratum h3{font-stretch:112%;font-weight:720;font-size:19px;line-height:1.3}
+  .stratum p{max-width:70ch}
+  .st-1{background:#FFFFFF}
+  .st-2{background:var(--mist)}
+  .st-3{background:var(--sage);box-shadow:inset 5px 0 0 var(--signal)}
+  .st-4{background:var(--leaf);color:var(--paper)}
+  .st-5{background:var(--ink);color:var(--paper)}
+  .around{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 48px;margin-top:48px}
+  .around h3{font-stretch:112%;font-weight:720;font-size:19px}
+  .around p{max-width:52ch;margin-top:8px;color:var(--moss)}
+  @media (max-width:760px){.stratum,.around{grid-template-columns:minmax(0,1fr)}}
+
+  /* education and recognition */
+  .creds{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px}
+  .cred-when{font-style:italic;font-size:15px;color:var(--moss)}
+  .creds h3{margin-top:6px;font-stretch:112%;font-weight:720;font-size:19px;line-height:1.3}
+  .creds p{margin-top:8px}
+  @media (max-width:820px){.creds{grid-template-columns:minmax(0,1fr)}}
+
+  /* contact and footer */
+  .contact{padding-bottom:clamp(64px,8vw,96px)}
+  .email{display:inline-block;margin-top:28px;font-stretch:118%;font-weight:760;font-size:clamp(24px,4.6vw,58px);line-height:1.1;letter-spacing:-.015em;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;text-decoration-color:var(--leaf);overflow-wrap:anywhere}
+  .email:hover{color:var(--leaf)}
+  .contact-links{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+  .footer{border-top:1px solid var(--line)}
+  .footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;padding-bottom:28px;font-size:14px;color:var(--moss)}
+
+  /* respect reduced motion: layers shown fully separated, no parallax */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero{height:auto}
+    .hero-inner{position:relative;height:auto;min-height:100vh}
+    .hint{display:none}
+  }
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en-GB"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta charset="utf-8"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;title&gt;Sadman Alam Reshad | Flutter Developer and Technical Lead&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="description" content="Flutter developer and technical lead with 5+ years of experience building cross-platform apps and the native Android and iOS code beneath them."&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="theme-color" content="#EEF3EE"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta property="og:type" content="website"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta property="og:title" content="Sadman Alam Reshad | Flutter Developer and Technical Lead"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta property="og:description" content="Cross-platform apps in Flutter, with native Android and iOS underneath."&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta property="og:url" content="https://r3denvy.github.io/"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta property="og:image" content="https://r3denvy.github.io/sadman.png"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</span></p>
-<p class="p1"><span class="s1">&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;display=swap"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>:root{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--paper:#EEF3EE;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--ink:#0E3528;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--moss:#4D6B5F;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--line:#C8D6CD;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--mist:#E0EBE3;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--sage:#CADDD1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--leaf:#2A7158;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--signal:#D7263D;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--max:1160px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--gutter:clamp(20px,5vw,56px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>*,*::before,*::after{box-sizing:border-box}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>*{margin:0;padding:0}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>body{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>img,svg{display:block;max-width:100%}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>a{color:inherit}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>::selection{background:var(--ink);color:var(--paper)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>:focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:6px}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.skip{position:absolute;left:16px;top:-64px;z-index:100;padding:10px 16px;border-radius:8px;background:var(--ink);color:var(--paper);text-decoration:none}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.skip:focus{top:16px}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* background dot grid, drifts slower than the page */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.bg-dots{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(14,53,40,.14) 1.1px,transparent 1.6px);background-size:26px 26px;background-position:0 var(--bgy,0px)}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* navigation */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(238,243,238,.84);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .25s ease}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav.is-scrolled{border-bottom-color:var(--line)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav-inner{max-width:var(--max);margin:0 auto;padding:16px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:24px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.brand{font-stretch:125%;font-weight:800;font-size:16px;text-decoration:none}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav-links{list-style:none;display:flex;gap:clamp(16px,3vw,32px)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav-links a{font-size:15px;font-weight:550;text-decoration:none}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.nav-links a:hover{color:var(--leaf)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:480px){.brand{display:none}.nav-inner{justify-content:center}}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* hero */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hero{position:relative}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hero-inner{position:relative;max-width:var(--max);margin:0 auto;padding:120px var(--gutter) 56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,5vw,72px);align-items:center}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hero h1{font-stretch:125%;font-weight:820;font-size:clamp(48px,6.6vw,92px);line-height:.92;letter-spacing:-.02em}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.lede{margin-top:28px;max-width:36ch;font-size:clamp(18px,1.55vw,21px);line-height:1.5}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border:1.5px solid var(--ink);border-radius:999px;font-size:16px;font-weight:620;text-decoration:none;transition:background-color .2s ease,color .2s ease,border-color .2s ease}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn-primary{background:var(--ink);color:var(--paper)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn-primary:hover{background:var(--leaf);border-color:var(--leaf)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn-ghost:hover{background:var(--ink);color:var(--paper)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.status{display:flex;align-items:center;gap:12px;margin-top:32px;font-size:15px;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.status-dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px rgba(215,38,61,.16)}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* exploded layer stack */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.stack{position:relative;justify-self:center;width:min(100%,560px,calc((100vh - 170px) / 1.1));aspect-ratio:10/11}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.layer{position:absolute;top:0;left:0;width:100%;will-change:transform}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.layer svg{width:62%;height:auto;overflow:visible;filter:drop-shadow(0 16px 20px rgba(14,53,40,.16))}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.layer-label{position:absolute;left:60%;top:calc(32% - .8em);max-width:40%;padding-left:48px;opacity:0}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.layer-label::before{content:"";position:absolute;left:4px;top:.8em;width:36px;height:1.5px;background:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.layer-label strong{display:block;font-stretch:112%;font-weight:700;font-size:16px;line-height:1.3}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.layer-label span{display:block;margin-top:2px;font-size:14px;line-height:1.4;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-size:14px;color:var(--moss)}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (min-width:900px){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hero{height:240vh}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hero-inner{position:sticky;top:0;height:100vh;min-height:640px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:899px){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hero-inner{grid-template-columns:minmax(0,1fr);padding-top:112px;gap:56px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.stack{width:min(100%,520px);aspect-ratio:10/9}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.layer svg{width:54%}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.layer-label{left:52%;max-width:48%;padding-left:30px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.layer-label::before{width:20px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.layer-label span{display:none}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hint{display:none}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* shared section styles */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.block{padding:clamp(88px,11vw,144px) 0}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.block h2{max-width:20ch;font-stretch:118%;font-weight:760;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.015em}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.intro{margin-top:18px;max-width:58ch;font-size:18px;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>section[id],header[id]{scroll-margin-top:80px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.inline-link{font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:var(--leaf)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.inline-link:hover{color:var(--leaf)}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* about */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.about-grid{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(36px,6vw,88px);align-items:center}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.portrait{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:var(--leaf)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.portrait .initials{position:absolute;inset:0;display:grid;place-items:center;font-stretch:125%;font-weight:800;font-size:72px;color:var(--paper)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.portrait img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.about-text p{margin-top:20px;max-width:60ch;font-size:18px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.about-text h2 + p{margin-top:28px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:760px){.about-grid{grid-template-columns:minmax(0,1fr)}.portrait{max-width:300px}}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* experience */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.timeline{list-style:none;display:grid;gap:64px;margin-top:64px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.job{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 40px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.job-when{padding-top:7px;text-align:right;font-style:italic;font-size:15px;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.job h3{font-stretch:112%;font-weight:740;font-size:clamp(22px,2.2vw,26px);line-height:1.2}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.job-role{margin-top:4px;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.job ul{max-width:68ch;margin-top:18px;padding-left:1.15em}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.job li + li{margin-top:10px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.job li::marker{color:var(--leaf)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.note{margin-top:16px;font-size:14px;font-style:italic;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:760px){.job{grid-template-columns:minmax(0,1fr)}.job-when{padding-top:0;text-align:left}}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* restricted systems */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.restricted{margin-top:56px;padding:clamp(28px,4.5vw,56px);border-radius:28px;background:var(--ink);color:var(--paper)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.restricted-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.restricted h3{font-stretch:118%;font-weight:740;font-size:clamp(22px,2.4vw,28px)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.restricted-head p{font-size:15px;color:#A7C1B4}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.systems{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:40px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.system{padding:0 clamp(20px,2.5vw,32px);border-left:1px solid rgba(238,243,238,.16)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.system:first-child{padding-left:0;border-left:0}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.system:last-child{padding-right:0}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.redacted{display:block;width:70%;height:14px;margin-bottom:18px;border-radius:2px;background:rgba(238,243,238,.86)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.system h4{font-stretch:112%;font-weight:700;font-size:19px;line-height:1.3}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.system p{margin-top:10px;font-size:16px;color:#CFDDD5}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:860px){.systems{grid-template-columns:minmax(0,1fr);gap:36px}.system{padding:0;border-left:0}}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* public apps and repos */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.subhead{margin-top:80px;font-stretch:118%;font-weight:740;font-size:clamp(22px,2.4vw,28px)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.apps{list-style:none;margin-top:20px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr) auto;gap:10px 48px;align-items:baseline;padding:28px 0;border-top:1px solid var(--line)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.app:last-child{border-bottom:1px solid var(--line)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.app h4{font-stretch:115%;font-weight:740;font-size:21px;line-height:1.25}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.app-tech{margin-top:4px;font-size:14px;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.app-desc{max-width:60ch}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.app-links{list-style:none;display:flex;gap:20px;white-space:nowrap}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:820px){.app{grid-template-columns:minmax(0,1fr)}}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* skills as layers */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.strata{list-style:none;margin-top:56px;border-radius:28px;overflow:hidden}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.stratum{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:8px 40px;align-items:baseline;padding:26px clamp(22px,3.5vw,44px)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.stratum h3{font-stretch:112%;font-weight:720;font-size:19px;line-height:1.3}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.stratum p{max-width:70ch}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.st-1{background:#FFFFFF}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.st-2{background:var(--mist)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.st-3{background:var(--sage);box-shadow:inset 5px 0 0 var(--signal)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.st-4{background:var(--leaf);color:var(--paper)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.st-5{background:var(--ink);color:var(--paper)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.around{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 48px;margin-top:48px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.around h3{font-stretch:112%;font-weight:720;font-size:19px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.around p{max-width:52ch;margin-top:8px;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:760px){.stratum,.around{grid-template-columns:minmax(0,1fr)}}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* education and recognition */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.creds{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.cred-when{font-style:italic;font-size:15px;color:var(--moss)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.creds h3{margin-top:6px;font-stretch:112%;font-weight:720;font-size:19px;line-height:1.3}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.creds p{margin-top:8px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width:820px){.creds{grid-template-columns:minmax(0,1fr)}}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* contact and footer */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.contact{padding-bottom:clamp(64px,8vw,96px)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.email{display:inline-block;margin-top:28px;font-stretch:118%;font-weight:760;font-size:clamp(24px,4.6vw,58px);line-height:1.1;letter-spacing:-.015em;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;text-decoration-color:var(--leaf);overflow-wrap:anywhere}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.email:hover{color:var(--leaf)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.contact-links{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.footer{border-top:1px solid var(--line)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;padding-bottom:28px;font-size:14px;color:var(--moss)}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* respect reduced motion: layers shown fully separated, no parallax */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>@media (prefers-reduced-motion:reduce){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>html{scroll-behavior:auto}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hero{height:auto}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hero-inner{position:relative;height:auto;min-height:100vh}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hint{display:none}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;a class="skip" href="#main"&gt;Skip to content&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1">&lt;div class="bg-dots" aria-hidden="true"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;nav class="nav" aria-label="Main"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="nav-inner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a class="brand" href="#top"&gt;Sadman Alam Reshad&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;ul class="nav-links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#work"&gt;Work&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#skills"&gt;Skills&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/nav&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;main id="main"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- HERO --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header class="hero" id="top"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="hero-inner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="hero-text"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Sadman Alam Reshad&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="lede"&gt;Flutter developer and technical lead. I build cross-platform apps and the native code beneath them, most recently secure communication and tracking systems for the Bangladesh Army.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="actions"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a class="btn btn-primary" href="mailto:sadmanalamalam@gmail.com"&gt;Email me&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a class="btn btn-ghost" href="resume.pdf"&gt;Download CV&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="status"&gt;&lt;span class="status-dot" aria-hidden="true"&gt;&lt;/span&gt;Currently Technical Lead at the Bangladesh Army IT Directorate, Dhaka&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;figure class="stack" aria-label="The layers I work across, from the Flutter UI down to the operating system"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- layer 1: Flutter UI --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="layer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 330 206" aria-hidden="true" focusable="false"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#B6CABD"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#B6CABD"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="matrix(.866 .5 -.866 .5 215 6)"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect width="120" height="240" rx="16" fill="#FFFFFF" stroke="#C8D6CD"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="46" y="7" width="28" height="4" rx="2" fill="#C8D6CD"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="10" y="18" width="100" height="20" rx="7" fill="#E0EBE3"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="12" y="50" width="62" height="22" rx="9" fill="#E0EBE3"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="46" y="80" width="62" height="22" rx="9" fill="#2A7158"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="12" y="110" width="50" height="22" rx="9" fill="#E0EBE3"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="40" y="140" width="68" height="34" rx="9" fill="#2A7158"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="12" y="182" width="44" height="18" rx="9" fill="#E0EBE3"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="10" y="210" width="80" height="20" rx="10" fill="#EEF3EE" stroke="#C8D6CD"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;circle cx="102" cy="220" r="8" fill="#0E3528"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="layer-label"&gt;&lt;strong&gt;Flutter and Dart&lt;/strong&gt;&lt;span&gt;Widgets, async and isolates&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- layer 2: state and architecture --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="layer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 330 206" aria-hidden="true" focusable="false"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#A6BEAF"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#A6BEAF"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="matrix(.866 .5 -.866 .5 215 6)"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect width="120" height="240" rx="16" fill="#E0EBE3" stroke="#C8D6CD"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;path d="M60 46 L30 96 M60 46 L90 96 M30 96 L16 150 M30 96 L44 150 M90 96 L76 150 M90 96 L104 150 M44 150 L60 200 M76 150 L60 200" stroke="#2A7158" stroke-width="2" fill="none" opacity=".55"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;g fill="#2A7158"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;circle cx="60" cy="46" r="9"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;circle cx="30" cy="96" r="7"/&gt;&lt;circle cx="90" cy="96" r="7"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;circle cx="16" cy="150" r="6"/&gt;&lt;circle cx="44" cy="150" r="6"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;circle cx="76" cy="150" r="6"/&gt;&lt;circle cx="104" cy="150" r="6"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="46" y="192" width="28" height="18" rx="5" fill="#0E3528"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="layer-label"&gt;&lt;strong&gt;State and architecture&lt;/strong&gt;&lt;span&gt;Provider, Riverpod, Clean Architecture&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- layer 3: platform channels --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="layer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 330 206" aria-hidden="true" focusable="false"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#92B09F"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#92B09F"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="matrix(.866 .5 -.866 .5 215 6)"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect width="120" height="240" rx="16" fill="#CADDD1" stroke="#B6CABD"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="14" y="16" width="92" height="40" rx="10" fill="#FFFFFF"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="14" y="184" width="92" height="40" rx="10" fill="#0E3528"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;g stroke="#D7263D" stroke-width="2.5" stroke-dasharray="6 6" stroke-linecap="round"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;path d="M38 62 V178"/&gt;&lt;path d="M60 62 V178"/&gt;&lt;path d="M82 62 V178"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;g fill="#D7263D"&gt;&lt;circle cx="38" cy="96" r="4.5"/&gt;&lt;circle cx="60" cy="140" r="4.5"/&gt;&lt;circle cx="82" cy="110" r="4.5"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="layer-label"&gt;&lt;strong&gt;Platform channels&lt;/strong&gt;&lt;span&gt;Where Dart meets native code&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- layer 4: native code --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="layer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 330 206" aria-hidden="true" focusable="false"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#1A4F3D"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#1A4F3D"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="matrix(.866 .5 -.866 .5 215 6)"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect width="120" height="240" rx="16" fill="#2A7158"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;g fill="#EEF3EE"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="12" y="20" width="58" height="6" rx="3" opacity=".75"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="12" y="35" width="86" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="24" y="50" width="70" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="24" y="65" width="46" height="6" rx="3" opacity=".7"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="36" y="80" width="62" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="36" y="95" width="40" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="24" y="110" width="30" height="6" rx="3" opacity=".7"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="12" y="125" width="18" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="12" y="148" width="72" height="6" rx="3" opacity=".75"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="24" y="163" width="80" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="24" y="178" width="54" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="36" y="193" width="44" height="6" rx="3" opacity=".7"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="24" y="208" width="26" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="12" y="223" width="18" height="6" rx="3" opacity=".45"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="layer-label"&gt;&lt;strong&gt;Native code&lt;/strong&gt;&lt;span&gt;Kotlin, Java, Swift, Objective-C&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- layer 5: operating system --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="layer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 330 206" aria-hidden="true" focusable="false"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#061C14"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"&gt;&lt;rect width="120" height="240" rx="16" fill="#061C14"/&gt;&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;g transform="matrix(.866 .5 -.866 .5 215 6)"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect width="120" height="240" rx="16" fill="#0E3528"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="12" y="10" width="96" height="4" rx="2" fill="#EEF3EE" opacity=".22"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;g fill="#EEF3EE" opacity=".18"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="16" y="28" width="22" height="22" rx="6"/&gt;&lt;rect x="49" y="28" width="22" height="22" rx="6"/&gt;&lt;rect x="82" y="28" width="22" height="22" rx="6"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="16" y="64" width="22" height="22" rx="6"/&gt;&lt;rect x="82" y="64" width="22" height="22" rx="6"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="16" y="100" width="22" height="22" rx="6"/&gt;&lt;rect x="49" y="100" width="22" height="22" rx="6"/&gt;&lt;rect x="82" y="100" width="22" height="22" rx="6"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="16" y="136" width="22" height="22" rx="6"/&gt;&lt;rect x="49" y="136" width="22" height="22" rx="6"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="49" y="64" width="22" height="22" rx="6" fill="#2A7158"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;rect x="12" y="194" width="96" height="34" rx="13" fill="#EEF3EE" opacity=".1"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;g fill="#EEF3EE" opacity=".26"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;rect x="22" y="200" width="22" height="22" rx="6"/&gt;&lt;rect x="49" y="200" width="22" height="22" rx="6"/&gt;&lt;rect x="76" y="200" width="22" height="22" rx="6"/&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/g&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="layer-label"&gt;&lt;strong&gt;Operating system&lt;/strong&gt;&lt;span&gt;Android, AOSP and iOS&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/figure&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="hint" aria-hidden="true"&gt;Scroll to separate the layers&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ABOUT --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="block" id="about"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="wrap about-grid"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;figure class="portrait"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="initials" aria-hidden="true"&gt;SR&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="sadman.png" alt="Portrait of Sadman Alam Reshad" onerror="this.remove()"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/figure&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="about-text"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Five years across the mobile stack&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;I started in native Android at BJIT, building system apps, a translation app and the software for six of Pocketalk's translation devices. In 2024 I moved to Flutter at mPower, where I led 14 mobile developers shipping apps for farmers and rural communities across Bangladesh.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Today I'm a technical lead at the Bangladesh Army IT Directorate, responsible for 20 developers and for communication, tracking and healthcare systems where security comes first. I still maintain native Android and iOS codebases, which is why I'm comfortable going below the Flutter layer when a plugin doesn't exist.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- EXPERIENCE --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="block" id="work"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Where I've worked&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;ol class="timeline"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="job"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="job-when"&gt;Mar 2025 – Present&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Bangladesh Army&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="job-role"&gt;Technical Lead, IT Directorate&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Lead engineer for 20 developers, owning project planning, project management and resourcing across frontend codebases and backend logic.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Built secure communication systems with feature parity to mainstream messengers, including meetings, one-to-one and group chat, voice and video calls, and media sharing, with additional encryption layers on top of standard end-to-end encryption.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Built a real-time tracking app for military personnel, vehicles and drones.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Built a healthcare management system for military personnel and civilians across all militarized zones in Bangladesh.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Maintain and extend legacy native Android and iOS applications.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="note"&gt;Project names withheld under military NDA.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="job"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="job-when"&gt;Aug 2024 – Mar 2025&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3&gt;mPower Social Enterprises Ltd.&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="job-role"&gt;Senior Software Engineer, Mobile Applications Lead&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Led a team of 14 mobile developers, planning and managing projects.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Shipped Khamar Bondhu in Flutter and Shudokkho in native Android, both live on Google Play.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Built a reusable e-learning module used by four apps, and dynamic ODK form rendering for the BAHIS animal-health survey app.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="job"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="job-when"&gt;Nov 2021 – Aug 2024&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3&gt;BJIT Limited&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="job-role"&gt;Software Engineer, Innovation Services Engineering Division&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Developed features, fixed bugs and delivered client change requests for the Pocketalk translation app on Android.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Developed, documented and supported software for six Pocketalk translation device models.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;li&gt;Built AOSP system applications with OS-level settings customisation, and Ventana, a control hub that shares data and commands with other apps through Content Providers.&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/ol&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- PROJECTS --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="block" id="projects"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Selected work&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="intro"&gt;Most of my recent work is restricted, so those projects are described without names. Everything else is public and linked.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="restricted"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="restricted-head"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Bangladesh Army systems&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;Names withheld under military NDA&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="systems"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li class="system"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="redacted" role="img" aria-label="Project name withheld"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Secure communication system&lt;/h4&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Meetings, one-to-one and group chat, voice and video calls, and media sharing, with extra encryption layers on top of end-to-end encryption.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li class="system"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="redacted" role="img" aria-label="Project name withheld"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Real-time tracking&lt;/h4&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Live tracking of military personnel, vehicles and drones.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li class="system"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="redacted" role="img" aria-label="Project name withheld"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Healthcare management&lt;/h4&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Healthcare management for military personnel and civilians across all militarized zones in Bangladesh.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h3 class="subhead"&gt;Public apps&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;ul class="apps"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;Khamar Bondhu&lt;/h4&gt;&lt;p class="app-tech"&gt;Flutter, Android and iOS&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;Farm management for Bangladeshi farmers, with consultations with registered professionals. Built with Riverpod, SSLCommerz payments, Agora video calls and AdMob.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="app-links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a class="inline-link" href="https://khamarbondhubd.com/"&gt;Website&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a class="inline-link" href="https://play.google.com/store/apps/details?id=com.mpower.app.mdairy"&gt;Google Play&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;Shudokkho&lt;/h4&gt;&lt;p class="app-tech"&gt;Native Android&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;Telemedicine connecting rural communities with registered vets. MVVM and Dagger-Hilt, with Agora video calls, SSLCommerz payments and custom in-app advertising.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="app-links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a class="inline-link" href="https://shudokkho.com/"&gt;Website&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a class="inline-link" href="https://play.google.com/store/apps/details?id=com.mpower.android.app.lpin.crm"&gt;Google Play&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;Pocketalk Translation App&lt;/h4&gt;&lt;p class="app-tech"&gt;Native Android&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;Feature work, bug fixes and client change requests for Pocketalk's translation app.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="app-links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a class="inline-link" href="https://play.google.com/store/apps/details?id=com.pocketalk.android.pt.translation"&gt;Google Play&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a class="inline-link" href="https://apps.apple.com/gb/app/pocketalk-translation-app/id1611714517"&gt;App Store&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;Pocketalk devices&lt;/h4&gt;&lt;p class="app-tech"&gt;Native Android&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;Software development, documentation and support across six translation devices: PTW, PTM, PTS, PTS2, PTS+ and PTS2+.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="app-links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a class="inline-link" href="https://www.pocketalk.com/"&gt;Pocketalk&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;E-Learning module&lt;/h4&gt;&lt;p class="app-tech"&gt;Shared library&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;Livestock knowledge, quizzes and score tracking, built once and integrated into Shurokkha, Shudokkho, Khamar Bondhu and Motsho Bondhu.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;BAHIS&lt;/h4&gt;&lt;p class="app-tech"&gt;Bangladesh Animal Health Intelligence System&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;Survey and data collection for animal health, with dynamic ODK xForm rendering and runtime UI generation.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;AOSP system apps and Ventana&lt;/h4&gt;&lt;p class="app-tech"&gt;Native Android&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;System applications and OS-level settings customisation, plus a control hub that shares data and commands with other apps through Content Providers.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h3 class="subhead"&gt;On GitHub&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;ul class="apps"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;App Scheduler&lt;/h4&gt;&lt;p class="app-tech"&gt;Native Android&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;Schedules the launch of other installed apps. MVVM, AlarmManager, Accessibility Service, Navigation, Room and Dagger-Hilt.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="app-links"&gt;&lt;li&gt;&lt;a class="inline-link" href="https://github.com/sadman1148/App-Scheduler"&gt;Source code&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="app"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;h4&gt;MovieDB&lt;/h4&gt;&lt;p class="app-tech"&gt;Native Android&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="app-desc"&gt;A media viewer app. MVVM, Room, Retrofit, Navigation and Dagger-Hilt.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="app-links"&gt;&lt;li&gt;&lt;a class="inline-link" href="https://github.com/sadman1148/MovieDB"&gt;Source code&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- SKILLS --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="block" id="skills"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;What I work with&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="intro"&gt;Grouped by layer, from the Flutter UI down to the operating system.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;ul class="strata"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="stratum st-1"&gt;&lt;h3&gt;Flutter and Dart&lt;/h3&gt;&lt;p&gt;Flutter, Dart, Futures, Streams, Isolates, compute&lt;/p&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="stratum st-2"&gt;&lt;h3&gt;State and architecture&lt;/h3&gt;&lt;p&gt;Provider, Riverpod, MVVM, MVC, Clean Architecture, Dio, http&lt;/p&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="stratum st-3"&gt;&lt;h3&gt;Platform channels and SDKs&lt;/h3&gt;&lt;p&gt;Platform channels, Firebase, Agora, Zoom SDK, WebRTC, SSLCommerz, bKash, Stripe, AdMob&lt;/p&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="stratum st-4"&gt;&lt;h3&gt;Native code&lt;/h3&gt;&lt;p&gt;Kotlin, Java, Swift, Objective-C, Coroutines, RxJava, WorkManager, Dagger, Hilt, Retrofit, OkHttp, Ktor, Room, SQLite, Navigation Component, Glide, Coil&lt;/p&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="stratum st-5"&gt;&lt;h3&gt;Operating system&lt;/h3&gt;&lt;p&gt;AOSP system applications, Android system settings, Content Providers&lt;/p&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="around"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;h3&gt;Tools&lt;/h3&gt;&lt;p&gt;Git, Jira, Redmine, Claude Code, Antigravity, Postman, JMeter, Figma, Draw.io, Photoshop&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;h3&gt;Other languages&lt;/h3&gt;&lt;p&gt;JavaScript, Python, HTML, CSS, C/C++, SQL&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- EDUCATION AND RECOGNITION --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="block" id="background"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Education and recognition&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;ul class="creds"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="cred-when"&gt;2017 – 2021&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3&gt;BSc in Computer Science and Engineering&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;BRAC University, School of Data and Sciences. CGPA 3.62 out of 4.00, with a thesis in machine learning.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="cred-when"&gt;2021&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3&gt;BJIT Academy&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;Software development and soft-skills training covering Android development, project management, Japanese business culture, business finance and communication, and workplace etiquette.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="cred-when"&gt;2023 – 2024&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Best Performer of the Year&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;BJIT Limited, for work on a client-billed project. &lt;a class="inline-link" href="https://drive.google.com/file/d/1oJlrjBnVUBbo5d8zagsEsMkAdUi1IZlo/view?usp=sharing"&gt;View credential&lt;/a&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- CONTACT --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="block contact" id="contact"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Get in touch&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="intro"&gt;Email is the fastest way to reach me.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;a class="email" href="mailto:sadmanalamalam@gmail.com"&gt;sadmanalamalam@gmail.com&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;ul class="contact-links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a class="btn btn-ghost" href="https://www.linkedin.com/in/sadman-alam-impulse/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a class="btn btn-ghost" href="https://github.com/sadman1148"&gt;GitHub&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a class="btn btn-ghost" href="resume.pdf"&gt;Download CV&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/main&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;footer class="footer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;© &lt;span id="year"&gt;2026&lt;/span&gt; Sadman Alam Reshad&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Hosted on GitHub Pages&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/footer&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;script&gt;</span></p>
-<p class="p1"><span class="s1">(() =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const desktop = window.matchMedia('(min-width: 900px)');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const root = document.documentElement;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const nav = document.querySelector('.nav');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const hero = document.querySelector('.hero');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const stack = document.querySelector('.stack');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const layers = [...stack.querySelectorAll('.layer')];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const labels = layers.map(layer =&gt; layer.querySelector('.layer-label'));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const hint = document.querySelector('.hint');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const portrait = document.querySelector('.portrait');</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const clamp = (v, lo = 0, hi = 1) =&gt; Math.min(hi, Math.max(lo, v));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ease = t =&gt; (t &lt; 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let plateH = 0, gapMin = 0, gapMax = 0, stackH = 0, queued = false;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// top layer paints above the ones beneath it</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>layers.forEach((layer, i) =&gt; { layer.style.zIndex = String(layers.length - i); });</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function measure() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>plateH = layers[0].querySelector('svg').getBoundingClientRect().height;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gapMin = plateH * 0.07;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gapMax = plateH * (desktop.matches ? 0.46 : 0.42);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>stackH = plateH + gapMax * (layers.length - 1);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>stack.style.height = stackH + 'px';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// 0 = layers stacked together, 1 = fully separated</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function heroProgress() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (reduce.matches) return 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const vh = window.innerHeight;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (desktop.matches) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const travel = hero.offsetHeight - vh;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return travel &gt; 0 ? clamp((-hero.getBoundingClientRect().top / travel) * 1.2) : 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return clamp(window.scrollY / (vh * 0.55));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function render() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>queued = false;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const p = ease(heroProgress());</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const mid = (layers.length - 1) / 2;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const gap = gapMin + (gapMax - gapMin) * p;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const base = (stackH - plateH) / 2;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>layers.forEach((layer, i) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>layer.style.transform = 'translate3d(0,' + (base + (i - mid) * gap).toFixed(2) + 'px,0)';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>labels[i].style.opacity = clamp((p - 0.2 - i * 0.1) / 0.25).toFixed(3);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (hint) hint.style.opacity = (1 - clamp(p * 4)).toFixed(3);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>nav.classList.toggle('is-scrolled', window.scrollY &gt; 8);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (reduce.matches) return;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// background drifts at a fifth of scroll speed</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>root.style.setProperty('--bgy', (-window.scrollY * 0.2).toFixed(1) + 'px');</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// portrait moves slower than its frame</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const img = portrait &amp;&amp; portrait.querySelector('img');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (img) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const r = portrait.getBoundingClientRect();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const vh = window.innerHeight;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (r.bottom &gt; 0 &amp;&amp; r.top &lt; vh) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const t = clamp((vh - r.top) / (vh + r.height));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>img.style.transform = 'translate3d(0,' + ((t - 0.5) * 14).toFixed(2) + '%,0)';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function queue() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (!queued) { queued = true; requestAnimationFrame(render); }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function refresh() { measure(); render(); }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>window.addEventListener('scroll', queue, { passive: true });</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>window.addEventListener('resize', refresh);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>window.addEventListener('load', refresh);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>desktop.addEventListener('change', refresh);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>reduce.addEventListener('change', refresh);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>refresh();</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('year').textContent = new Date().getFullYear();</span></p>
-<p class="p1"><span class="s1">})();</span></p>
-<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bg-dots" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Sadman Alam Reshad</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Sadman Alam Reshad</h1>
+        <p class="lede">Flutter developer and technical lead. I build cross-platform apps and the native code beneath them, most recently secure communication and tracking systems for the Bangladesh Army.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:sadmanalamalam@gmail.com">Email me</a>
+          <a class="btn btn-ghost" href="resume.pdf">Download CV</a>
+        </div>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Currently Technical Lead at the Bangladesh Army IT Directorate, Dhaka</p>
+      </div>
+
+      <figure class="stack" aria-label="The layers I work across, from the Flutter UI down to the operating system">
+
+        <!-- layer 1: Flutter UI -->
+        <div class="layer">
+          <svg viewBox="0 0 330 206" aria-hidden="true" focusable="false">
+            <g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#B6CABD"/></g>
+            <g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#B6CABD"/></g>
+            <g transform="matrix(.866 .5 -.866 .5 215 6)">
+              <rect width="120" height="240" rx="16" fill="#FFFFFF" stroke="#C8D6CD"/>
+              <rect x="46" y="7" width="28" height="4" rx="2" fill="#C8D6CD"/>
+              <rect x="10" y="18" width="100" height="20" rx="7" fill="#E0EBE3"/>
+              <rect x="12" y="50" width="62" height="22" rx="9" fill="#E0EBE3"/>
+              <rect x="46" y="80" width="62" height="22" rx="9" fill="#2A7158"/>
+              <rect x="12" y="110" width="50" height="22" rx="9" fill="#E0EBE3"/>
+              <rect x="40" y="140" width="68" height="34" rx="9" fill="#2A7158"/>
+              <rect x="12" y="182" width="44" height="18" rx="9" fill="#E0EBE3"/>
+              <rect x="10" y="210" width="80" height="20" rx="10" fill="#EEF3EE" stroke="#C8D6CD"/>
+              <circle cx="102" cy="220" r="8" fill="#0E3528"/>
+            </g>
+          </svg>
+          <div class="layer-label"><strong>Flutter and Dart</strong><span>Widgets, async and isolates</span></div>
+        </div>
+
+        <!-- layer 2: state and architecture -->
+        <div class="layer">
+          <svg viewBox="0 0 330 206" aria-hidden="true" focusable="false">
+            <g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#A6BEAF"/></g>
+            <g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#A6BEAF"/></g>
+            <g transform="matrix(.866 .5 -.866 .5 215 6)">
+              <rect width="120" height="240" rx="16" fill="#E0EBE3" stroke="#C8D6CD"/>
+              <path d="M60 46 L30 96 M60 46 L90 96 M30 96 L16 150 M30 96 L44 150 M90 96 L76 150 M90 96 L104 150 M44 150 L60 200 M76 150 L60 200" stroke="#2A7158" stroke-width="2" fill="none" opacity=".55"/>
+              <g fill="#2A7158">
+                <circle cx="60" cy="46" r="9"/>
+                <circle cx="30" cy="96" r="7"/><circle cx="90" cy="96" r="7"/>
+                <circle cx="16" cy="150" r="6"/><circle cx="44" cy="150" r="6"/>
+                <circle cx="76" cy="150" r="6"/><circle cx="104" cy="150" r="6"/>
+              </g>
+              <rect x="46" y="192" width="28" height="18" rx="5" fill="#0E3528"/>
+            </g>
+          </svg>
+          <div class="layer-label"><strong>State and architecture</strong><span>Provider, Riverpod, Clean Architecture</span></div>
+        </div>
+
+        <!-- layer 3: platform channels -->
+        <div class="layer">
+          <svg viewBox="0 0 330 206" aria-hidden="true" focusable="false">
+            <g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#92B09F"/></g>
+            <g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#92B09F"/></g>
+            <g transform="matrix(.866 .5 -.866 .5 215 6)">
+              <rect width="120" height="240" rx="16" fill="#CADDD1" stroke="#B6CABD"/>
+              <rect x="14" y="16" width="92" height="40" rx="10" fill="#FFFFFF"/>
+              <rect x="14" y="184" width="92" height="40" rx="10" fill="#0E3528"/>
+              <g stroke="#D7263D" stroke-width="2.5" stroke-dasharray="6 6" stroke-linecap="round">
+                <path d="M38 62 V178"/><path d="M60 62 V178"/><path d="M82 62 V178"/>
+              </g>
+              <g fill="#D7263D"><circle cx="38" cy="96" r="4.5"/><circle cx="60" cy="140" r="4.5"/><circle cx="82" cy="110" r="4.5"/></g>
+            </g>
+          </svg>
+          <div class="layer-label"><strong>Platform channels</strong><span>Where Dart meets native code</span></div>
+        </div>
+
+        <!-- layer 4: native code -->
+        <div class="layer">
+          <svg viewBox="0 0 330 206" aria-hidden="true" focusable="false">
+            <g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#1A4F3D"/></g>
+            <g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#1A4F3D"/></g>
+            <g transform="matrix(.866 .5 -.866 .5 215 6)">
+              <rect width="120" height="240" rx="16" fill="#2A7158"/>
+              <g fill="#EEF3EE">
+                <rect x="12" y="20" width="58" height="6" rx="3" opacity=".75"/>
+                <rect x="12" y="35" width="86" height="6" rx="3" opacity=".45"/>
+                <rect x="24" y="50" width="70" height="6" rx="3" opacity=".45"/>
+                <rect x="24" y="65" width="46" height="6" rx="3" opacity=".7"/>
+                <rect x="36" y="80" width="62" height="6" rx="3" opacity=".45"/>
+                <rect x="36" y="95" width="40" height="6" rx="3" opacity=".45"/>
+                <rect x="24" y="110" width="30" height="6" rx="3" opacity=".7"/>
+                <rect x="12" y="125" width="18" height="6" rx="3" opacity=".45"/>
+                <rect x="12" y="148" width="72" height="6" rx="3" opacity=".75"/>
+                <rect x="24" y="163" width="80" height="6" rx="3" opacity=".45"/>
+                <rect x="24" y="178" width="54" height="6" rx="3" opacity=".45"/>
+                <rect x="36" y="193" width="44" height="6" rx="3" opacity=".7"/>
+                <rect x="24" y="208" width="26" height="6" rx="3" opacity=".45"/>
+                <rect x="12" y="223" width="18" height="6" rx="3" opacity=".45"/>
+              </g>
+            </g>
+          </svg>
+          <div class="layer-label"><strong>Native code</strong><span>Kotlin, Java, Swift, Objective-C</span></div>
+        </div>
+
+        <!-- layer 5: operating system -->
+        <div class="layer">
+          <svg viewBox="0 0 330 206" aria-hidden="true" focusable="false">
+            <g transform="translate(0 9) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#061C14"/></g>
+            <g transform="translate(0 4.5) matrix(.866 .5 -.866 .5 215 6)"><rect width="120" height="240" rx="16" fill="#061C14"/></g>
+            <g transform="matrix(.866 .5 -.866 .5 215 6)">
+              <rect width="120" height="240" rx="16" fill="#0E3528"/>
+              <rect x="12" y="10" width="96" height="4" rx="2" fill="#EEF3EE" opacity=".22"/>
+              <g fill="#EEF3EE" opacity=".18">
+                <rect x="16" y="28" width="22" height="22" rx="6"/><rect x="49" y="28" width="22" height="22" rx="6"/><rect x="82" y="28" width="22" height="22" rx="6"/>
+                <rect x="16" y="64" width="22" height="22" rx="6"/><rect x="82" y="64" width="22" height="22" rx="6"/>
+                <rect x="16" y="100" width="22" height="22" rx="6"/><rect x="49" y="100" width="22" height="22" rx="6"/><rect x="82" y="100" width="22" height="22" rx="6"/>
+                <rect x="16" y="136" width="22" height="22" rx="6"/><rect x="49" y="136" width="22" height="22" rx="6"/>
+              </g>
+              <rect x="49" y="64" width="22" height="22" rx="6" fill="#2A7158"/>
+              <rect x="12" y="194" width="96" height="34" rx="13" fill="#EEF3EE" opacity=".1"/>
+              <g fill="#EEF3EE" opacity=".26">
+                <rect x="22" y="200" width="22" height="22" rx="6"/><rect x="49" y="200" width="22" height="22" rx="6"/><rect x="76" y="200" width="22" height="22" rx="6"/>
+              </g>
+            </g>
+          </svg>
+          <div class="layer-label"><strong>Operating system</strong><span>Android, AOSP and iOS</span></div>
+        </div>
+
+      </figure>
+      <p class="hint" aria-hidden="true">Scroll to separate the layers</p>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="block" id="about">
+    <div class="wrap about-grid">
+      <figure class="portrait">
+        <span class="initials" aria-hidden="true">SR</span>
+        <img src="sadman.png" alt="Portrait of Sadman Alam Reshad" onerror="this.remove()">
+      </figure>
+      <div class="about-text">
+        <h2>Five years across the mobile stack</h2>
+        <p>I started in native Android at BJIT, building system apps, a translation app and the software for six of Pocketalk's translation devices. In 2024 I moved to Flutter at mPower, where I led 14 mobile developers shipping apps for farmers and rural communities across Bangladesh.</p>
+        <p>Today I'm a technical lead at the Bangladesh Army IT Directorate, responsible for 20 developers and for communication, tracking and healthcare systems where security comes first. I still maintain native Android and iOS codebases, which is why I'm comfortable going below the Flutter layer when a plugin doesn't exist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="work">
+    <div class="wrap">
+      <h2>Where I've worked</h2>
+      <ol class="timeline">
+        <li class="job">
+          <p class="job-when">Mar 2025 – Present</p>
+          <div>
+            <h3>Bangladesh Army</h3>
+            <p class="job-role">Technical Lead, IT Directorate</p>
+            <ul>
+              <li>Lead engineer for 20 developers, owning project planning, project management and resourcing across frontend codebases and backend logic.</li>
+              <li>Built secure communication systems with feature parity to mainstream messengers, including meetings, one-to-one and group chat, voice and video calls, and media sharing, with additional encryption layers on top of standard end-to-end encryption.</li>
+              <li>Built a real-time tracking app for military personnel, vehicles and drones.</li>
+              <li>Built a healthcare management system for military personnel and civilians across all militarized zones in Bangladesh.</li>
+              <li>Maintain and extend legacy native Android and iOS applications.</li>
+            </ul>
+            <p class="note">Project names withheld under military NDA.</p>
+          </div>
+        </li>
+        <li class="job">
+          <p class="job-when">Aug 2024 – Mar 2025</p>
+          <div>
+            <h3>mPower Social Enterprises Ltd.</h3>
+            <p class="job-role">Senior Software Engineer, Mobile Applications Lead</p>
+            <ul>
+              <li>Led a team of 14 mobile developers, planning and managing projects.</li>
+              <li>Shipped Khamar Bondhu in Flutter and Shudokkho in native Android, both live on Google Play.</li>
+              <li>Built a reusable e-learning module used by four apps, and dynamic ODK form rendering for the BAHIS animal-health survey app.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <p class="job-when">Nov 2021 – Aug 2024</p>
+          <div>
+            <h3>BJIT Limited</h3>
+            <p class="job-role">Software Engineer, Innovation Services Engineering Division</p>
+            <ul>
+              <li>Developed features, fixed bugs and delivered client change requests for the Pocketalk translation app on Android.</li>
+              <li>Developed, documented and supported software for six Pocketalk translation device models.</li>
+              <li>Built AOSP system applications with OS-level settings customisation, and Ventana, a control hub that shares data and commands with other apps through Content Providers.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="block" id="projects">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <p class="intro">Most of my recent work is restricted, so those projects are described without names. Everything else is public and linked.</p>
+
+      <div class="restricted">
+        <div class="restricted-head">
+          <h3>Bangladesh Army systems</h3>
+          <p>Names withheld under military NDA</p>
+        </div>
+        <ul class="systems">
+          <li class="system">
+            <span class="redacted" role="img" aria-label="Project name withheld"></span>
+            <h4>Secure communication system</h4>
+            <p>Meetings, one-to-one and group chat, voice and video calls, and media sharing, with extra encryption layers on top of end-to-end encryption.</p>
+          </li>
+          <li class="system">
+            <span class="redacted" role="img" aria-label="Project name withheld"></span>
+            <h4>Real-time tracking</h4>
+            <p>Live tracking of military personnel, vehicles and drones.</p>
+          </li>
+          <li class="system">
+            <span class="redacted" role="img" aria-label="Project name withheld"></span>
+            <h4>Healthcare management</h4>
+            <p>Healthcare management for military personnel and civilians across all militarized zones in Bangladesh.</p>
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="subhead">Public apps</h3>
+      <ul class="apps">
+        <li class="app">
+          <div><h4>Khamar Bondhu</h4><p class="app-tech">Flutter, Android and iOS</p></div>
+          <p class="app-desc">Farm management for Bangladeshi farmers, with consultations with registered professionals. Built with Riverpod, SSLCommerz payments, Agora video calls and AdMob.</p>
+          <ul class="app-links">
+            <li><a class="inline-link" href="https://khamarbondhubd.com/">Website</a></li>
+            <li><a class="inline-link" href="https://play.google.com/store/apps/details?id=com.mpower.app.mdairy">Google Play</a></li>
+          </ul>
+        </li>
+        <li class="app">
+          <div><h4>Shudokkho</h4><p class="app-tech">Native Android</p></div>
+          <p class="app-desc">Telemedicine connecting rural communities with registered vets. MVVM and Dagger-Hilt, with Agora video calls, SSLCommerz payments and custom in-app advertising.</p>
+          <ul class="app-links">
+            <li><a class="inline-link" href="https://shudokkho.com/">Website</a></li>
+            <li><a class="inline-link" href="https://play.google.com/store/apps/details?id=com.mpower.android.app.lpin.crm">Google Play</a></li>
+          </ul>
+        </li>
+        <li class="app">
+          <div><h4>Pocketalk Translation App</h4><p class="app-tech">Native Android</p></div>
+          <p class="app-desc">Feature work, bug fixes and client change requests for Pocketalk's translation app.</p>
+          <ul class="app-links">
+            <li><a class="inline-link" href="https://play.google.com/store/apps/details?id=com.pocketalk.android.pt.translation">Google Play</a></li>
+            <li><a class="inline-link" href="https://apps.apple.com/gb/app/pocketalk-translation-app/id1611714517">App Store</a></li>
+          </ul>
+        </li>
+        <li class="app">
+          <div><h4>Pocketalk devices</h4><p class="app-tech">Native Android</p></div>
+          <p class="app-desc">Software development, documentation and support across six translation devices: PTW, PTM, PTS, PTS2, PTS+ and PTS2+.</p>
+          <ul class="app-links">
+            <li><a class="inline-link" href="https://www.pocketalk.com/">Pocketalk</a></li>
+          </ul>
+        </li>
+        <li class="app">
+          <div><h4>E-Learning module</h4><p class="app-tech">Shared library</p></div>
+          <p class="app-desc">Livestock knowledge, quizzes and score tracking, built once and integrated into Shurokkha, Shudokkho, Khamar Bondhu and Motsho Bondhu.</p>
+        </li>
+        <li class="app">
+          <div><h4>BAHIS</h4><p class="app-tech">Bangladesh Animal Health Intelligence System</p></div>
+          <p class="app-desc">Survey and data collection for animal health, with dynamic ODK xForm rendering and runtime UI generation.</p>
+        </li>
+        <li class="app">
+          <div><h4>AOSP system apps and Ventana</h4><p class="app-tech">Native Android</p></div>
+          <p class="app-desc">System applications and OS-level settings customisation, plus a control hub that shares data and commands with other apps through Content Providers.</p>
+        </li>
+      </ul>
+
+      <h3 class="subhead">On GitHub</h3>
+      <ul class="apps">
+        <li class="app">
+          <div><h4>App Scheduler</h4><p class="app-tech">Native Android</p></div>
+          <p class="app-desc">Schedules the launch of other installed apps. MVVM, AlarmManager, Accessibility Service, Navigation, Room and Dagger-Hilt.</p>
+          <ul class="app-links"><li><a class="inline-link" href="https://github.com/sadman1148/App-Scheduler">Source code</a></li></ul>
+        </li>
+        <li class="app">
+          <div><h4>MovieDB</h4><p class="app-tech">Native Android</p></div>
+          <p class="app-desc">A media viewer app. MVVM, Room, Retrofit, Navigation and Dagger-Hilt.</p>
+          <ul class="app-links"><li><a class="inline-link" href="https://github.com/sadman1148/MovieDB">Source code</a></li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="block" id="skills">
+    <div class="wrap">
+      <h2>What I work with</h2>
+      <p class="intro">Grouped by layer, from the Flutter UI down to the operating system.</p>
+      <ul class="strata">
+        <li class="stratum st-1"><h3>Flutter and Dart</h3><p>Flutter, Dart, Futures, Streams, Isolates, compute</p></li>
+        <li class="stratum st-2"><h3>State and architecture</h3><p>Provider, Riverpod, MVVM, MVC, Clean Architecture, Dio, http</p></li>
+        <li class="stratum st-3"><h3>Platform channels and SDKs</h3><p>Platform channels, Firebase, Agora, Zoom SDK, WebRTC, SSLCommerz, bKash, Stripe, AdMob</p></li>
+        <li class="stratum st-4"><h3>Native code</h3><p>Kotlin, Java, Swift, Objective-C, Coroutines, RxJava, WorkManager, Dagger, Hilt, Retrofit, OkHttp, Ktor, Room, SQLite, Navigation Component, Glide, Coil</p></li>
+        <li class="stratum st-5"><h3>Operating system</h3><p>AOSP system applications, Android system settings, Content Providers</p></li>
+      </ul>
+      <div class="around">
+        <div><h3>Tools</h3><p>Git, Jira, Redmine, Claude Code, Antigravity, Postman, JMeter, Figma, Draw.io, Photoshop</p></div>
+        <div><h3>Other languages</h3><p>JavaScript, Python, HTML, CSS, C/C++, SQL</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION AND RECOGNITION -->
+  <section class="block" id="background">
+    <div class="wrap">
+      <h2>Education and recognition</h2>
+      <ul class="creds">
+        <li>
+          <p class="cred-when">2017 – 2021</p>
+          <h3>BSc in Computer Science and Engineering</h3>
+          <p>BRAC University, School of Data and Sciences. CGPA 3.62 out of 4.00, with a thesis in machine learning.</p>
+        </li>
+        <li>
+          <p class="cred-when">2021</p>
+          <h3>BJIT Academy</h3>
+          <p>Software development and soft-skills training covering Android development, project management, Japanese business culture, business finance and communication, and workplace etiquette.</p>
+        </li>
+        <li>
+          <p class="cred-when">2023 – 2024</p>
+          <h3>Best Performer of the Year</h3>
+          <p>BJIT Limited, for work on a client-billed project. <a class="inline-link" href="https://drive.google.com/file/d/1oJlrjBnVUBbo5d8zagsEsMkAdUi1IZlo/view?usp=sharing">View credential</a></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="intro">Email is the fastest way to reach me.</p>
+      <a class="email" href="mailto:sadmanalamalam@gmail.com">sadmanalamalam@gmail.com</a>
+      <ul class="contact-links">
+        <li><a class="btn btn-ghost" href="https://www.linkedin.com/in/sadman-alam-impulse/">LinkedIn</a></li>
+        <li><a class="btn btn-ghost" href="https://github.com/sadman1148">GitHub</a></li>
+        <li><a class="btn btn-ghost" href="resume.pdf">Download CV</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Sadman Alam Reshad</p>
+    <p>Hosted on GitHub Pages</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = window.matchMedia('(min-width: 900px)');
+  const root = document.documentElement;
+  const nav = document.querySelector('.nav');
+  const hero = document.querySelector('.hero');
+  const stack = document.querySelector('.stack');
+  const layers = [...stack.querySelectorAll('.layer')];
+  const labels = layers.map(layer => layer.querySelector('.layer-label'));
+  const hint = document.querySelector('.hint');
+  const portrait = document.querySelector('.portrait');
+
+  const clamp = (v, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
+  const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+  let plateH = 0, gapMin = 0, gapMax = 0, stackH = 0, queued = false;
+
+  // top layer paints above the ones beneath it
+  layers.forEach((layer, i) => { layer.style.zIndex = String(layers.length - i); });
+
+  function measure() {
+    plateH = layers[0].querySelector('svg').getBoundingClientRect().height;
+    gapMin = plateH * 0.07;
+    gapMax = plateH * (desktop.matches ? 0.46 : 0.42);
+    stackH = plateH + gapMax * (layers.length - 1);
+    stack.style.height = stackH + 'px';
+  }
+
+  // 0 = layers stacked together, 1 = fully separated
+  function heroProgress() {
+    if (reduce.matches) return 1;
+    const vh = window.innerHeight;
+    if (desktop.matches) {
+      const travel = hero.offsetHeight - vh;
+      return travel > 0 ? clamp((-hero.getBoundingClientRect().top / travel) * 1.2) : 1;
+    }
+    return clamp(window.scrollY / (vh * 0.55));
+  }
+
+  function render() {
+    queued = false;
+    const p = ease(heroProgress());
+    const mid = (layers.length - 1) / 2;
+    const gap = gapMin + (gapMax - gapMin) * p;
+    const base = (stackH - plateH) / 2;
+
+    layers.forEach((layer, i) => {
+      layer.style.transform = 'translate3d(0,' + (base + (i - mid) * gap).toFixed(2) + 'px,0)';
+      labels[i].style.opacity = clamp((p - 0.2 - i * 0.1) / 0.25).toFixed(3);
+    });
+    if (hint) hint.style.opacity = (1 - clamp(p * 4)).toFixed(3);
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+
+    if (reduce.matches) return;
+
+    // background drifts at a fifth of scroll speed
+    root.style.setProperty('--bgy', (-window.scrollY * 0.2).toFixed(1) + 'px');
+
+    // portrait moves slower than its frame
+    const img = portrait && portrait.querySelector('img');
+    if (img) {
+      const r = portrait.getBoundingClientRect();
+      const vh = window.innerHeight;
+      if (r.bottom > 0 && r.top < vh) {
+        const t = clamp((vh - r.top) / (vh + r.height));
+        img.style.transform = 'translate3d(0,' + ((t - 0.5) * 14).toFixed(2) + '%,0)';
+      }
+    }
+  }
+
+  function queue() {
+    if (!queued) { queued = true; requestAnimationFrame(render); }
+  }
+
+  function refresh() { measure(); render(); }
+
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', refresh);
+  window.addEventListener('load', refresh);
+  desktop.addEventListener('change', refresh);
+  reduce.addEventListener('change', refresh);
+  refresh();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
